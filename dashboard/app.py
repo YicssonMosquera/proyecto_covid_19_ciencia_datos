@@ -45,7 +45,7 @@ df_raw, df_nacional, df_clusters = cargar_datos()
 # ENCABEZADO EJECUTIVO
 # ==============================================================================
 st.title("🧬 Sistema Inteligente de Monitoreo, Diagnóstico y Predicción Epidemiológica")
-st.markdown("**Proyecto Integrador de Ciencia de Datos e Inteligencia Artificial** | Universidad de La Salle | *Dataset: Johns Hopkins University (189 Países)*")
+st.markdown("**Proyecto Integrador de Ciencia de Datos e Inteligencia Artificial** | Universidad de La Salle ")
 
 # ==============================================================================
 # MÓDULO 1: FILTROS DINÁMICOS EN BARRA LATERAL (SOPORTE GLOBAL Y POR PAÍS)
@@ -141,11 +141,10 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 # PESTAÑA 1: PREGUNTAS DE INVESTIGACIÓN Y TRAZABILIDAD DE FASES
 # ------------------------------------------------------------------------------
 with tab1:
-    st.subheader("🧭 Hilo Conductor Metodológico del Proyecto")
     
     st.markdown("""
     <div class="box-info">
-    <h4>🎯 Pregunta de Investigación Principal (Fase 1)</h4>
+    <h4>🎯 Pregunta de Investigación Principal</h4>
     <p><i>"¿De qué manera el desarrollo de un sistema de inteligencia artificial y ciencia de datos facilita la estimación anticipada de decesos diarios, la detección temprana de estados de alerta sanitaria y la segmentación estratégica de regiones frente a la propagación de una epidemia global?"</i></p>
     </div>
     """, unsafe_allow_html=True)
@@ -170,7 +169,7 @@ with tab1:
 
 """)
 
-    st.markdown("### 📋 Resumen Ejecutivo de lo Ejecutado en Cada Fase")
+    st.markdown("### 📋 Resumen de lo Ejecutado en Cada Fase")
     fases_df = pd.DataFrame({
         "Fase del Proyecto": [
             "Fase 1: Formulación y EDA",
@@ -211,7 +210,7 @@ with tab2:
         audit_table = pd.DataFrame({
             "Columna / Aspecto": ["Province/State", "Recovered", "Valores Negativos Diarios", "Outliers (> Q3 + 1.5 IQR)", "Variables Predictoras"],
             "Estado Original (Crudo)": ["69.66% Nulos (50.220 filas)", "5.24% Nulos (3.780 filas)", "Rectificaciones negativas", "18.9% (Picos de contagio)", "Solo acumulados monótonos"],
-            "Tratamiento Aplicado (Fase 2)": ["Agregación por país (MNAR)", "Interpolación lineal temporal (MAR)", "Recorte inferior en 0 (clip)", "Conservados + RobustScaler", "Flujos diarios, MA7 y Letalidad"]
+            "Tratamiento Aplicado": ["Agregación por país (MNAR)", "Interpolación lineal temporal (MAR)", "Recorte inferior en 0 (clip)", "Conservados + RobustScaler", "Flujos diarios, MA7 y Letalidad"]
         })
         st.dataframe(audit_table, use_container_width=True, hide_index=True)
         
@@ -313,7 +312,7 @@ with tab3:
 # PESTAÑA 4: COMPARATIVA DE MODELOS Y SIMULADOR EN VIVO
 # ------------------------------------------------------------------------------
 with tab4:
-    st.subheader("🤖 Evaluación Comparativa de Modelos (Fase 3) y Simulador en Vivo")
+    st.subheader("🤖 Evaluación Comparativa de Modelos y Simulador en Vivo")
     
     col_m1, col_m2 = st.columns(2)
     with col_m1:
